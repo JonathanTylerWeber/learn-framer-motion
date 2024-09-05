@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div className="bg-gray-900 min-h-screen flex justify-center p-6">
+    <div className="bg-gray-900 min-h-screen mt-20 flex justify-center p-6">
       <div className="max-w-lg">
         <h1 className="text-4xl font-bold text-teal-400 mb-4">
           Exploring Framer Motion
