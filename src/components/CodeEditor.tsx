@@ -8,10 +8,9 @@ const CodeEditor = () => {
   const [runAnimation, setRunAnimation] = useState(false);
   const [code, setCode] = useState(`
 <motion.div
+  className="h-[150px] w-[150px] bg-white rounded-full"
   // add animation 
->
-  <div className="h-[150px] w-[150px] bg-white rounded-full"></div>
-</motion.div>
+/>
 `);
 
   const handleRunAnimation = () => {

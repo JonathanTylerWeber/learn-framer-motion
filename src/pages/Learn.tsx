@@ -117,7 +117,7 @@ const Learn = () => {
           <h2 className="text-teal-400 text-2xl font-bold mb-2">Animating Colors</h2>
           <CodeSnippet code={colorAnimationCode} />
           <p className="text-white my-4 text-lg px-4 sm:px-8">
-            You can animate the color of elements by changing the <code>backgroundColor</code> property. This example transitions the background color of the div from white to yellow.
+            You can animate the color of elements by changing the <code>backgroundColor</code> and <code>color</code> properties. This example transitions the background color of the div from white to yellow.
           </p>
         </div>
 
