@@ -1,7 +1,7 @@
 const Home = () => {
   return (
-    <div className="bg-gray-900 min-h-screen mt-20 flex justify-center p-6">
-      <div className="max-w-lg">
+    <div className="bg-gray-900 min-h-screen mt-20 flex justify-center py-6 ">
+      <div className="max-w-lg w-full px-6 md:px-0">
         <h1 className="text-4xl font-bold text-teal-400 mb-4">
           Exploring Framer Motion
         </h1>

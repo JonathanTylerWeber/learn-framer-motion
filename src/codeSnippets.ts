@@ -44,3 +44,11 @@ export const rotationAnimationCode = `
   transition={{ duration: 2 }}
 />
 `;
+
+export const scaleAnimationCode = `
+<motion.div
+  className="h-[150px] w-[150px] bg-white rounded-full"
+  initial={{ scale: 0 }}
+  animate={{ scale: 1 }}
+/>
+`;

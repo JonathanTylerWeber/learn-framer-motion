@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -16,7 +17,10 @@ const Navbar = () => {
   // Close the menu if clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (
+        menuRef.current && !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current && !buttonRef.current.contains(event.target as Node)
+      ) {
         closeMobileMenu();
       }
     };
@@ -39,9 +43,10 @@ const Navbar = () => {
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button */}
             <button
+              ref={buttonRef}
               type="button"
               onClick={toggleMobileMenu}
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none "
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -99,6 +104,16 @@ const Navbar = () => {
                 >
                   Learn
                 </NavLink>
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  }
+                >
+                  Projects
+                </NavLink>
               </div>
             </div>
           </div>
@@ -141,6 +156,16 @@ const Navbar = () => {
               }
             >
               Learn
+            </NavLink>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+              }
+            >
+              Projects
             </NavLink>
           </div>
         </div>
