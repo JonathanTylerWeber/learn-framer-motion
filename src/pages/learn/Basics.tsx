@@ -11,8 +11,9 @@ import {
 } from "../../codeSnippets";
 import CodeSnippet from "../../components/CodeSnippet";
 import SideNav from "../../components/SideNav";
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SelectDropdown from "../../components/SelectDropDown";
+import PageTransitionOverlay from "../../components/PageTransitionOverlay";
 
 const Basics = () => {
   const [animateKey, setAnimateKey] = useState(0);
@@ -26,11 +27,13 @@ const Basics = () => {
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newOption = e.target.value;
     setSelectedOption(newOption);
-    navigate(`/learn/${newOption}`); // Updated to use newOption
+    navigate(`/learn/${newOption}`);
   };
 
   return (
     <>
+      <PageTransitionOverlay />
+
       <div className="flex">
 
         <div className="hidden 2xl:block">
@@ -151,7 +154,6 @@ const Basics = () => {
           </div>
         </div>
       </div>
-      < Outlet />
     </>
   );
 };

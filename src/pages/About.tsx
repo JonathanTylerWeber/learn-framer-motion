@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PageTransitionOverlay from "../components/PageTransitionOverlay";
 
 const pathVariants = {
   hidden: {
@@ -9,7 +10,8 @@ const pathVariants = {
     opacity: 1,
     pathLength: 1,
     transition: {
-      duration: 2,
+      duration: 3,
+      delay: .5,
       ease: "easeInOut",
     },
   },
@@ -17,8 +19,10 @@ const pathVariants = {
 
 const About = () => {
   return (
-    <div className="m-10">
-      <p className="text-white">About</p>
+    <div
+      className="m-20"
+    >
+      <PageTransitionOverlay />
 
       <motion.svg
         version="1.0"

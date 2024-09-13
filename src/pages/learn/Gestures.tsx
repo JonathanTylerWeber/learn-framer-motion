@@ -2,6 +2,7 @@ import { useState } from "react";
 import SideNav from "../../components/SideNav";
 import { useNavigate } from "react-router-dom";
 import SelectDropdown from "../../components/SelectDropDown";
+import PageTransitionOverlay from "../../components/PageTransitionOverlay";
 
 const Gestures = () => {
   const [selectedOption, setSelectedOption] = useState("gestures");
@@ -16,6 +17,8 @@ const Gestures = () => {
   return (
     <>
       <div className="flex">
+
+        <PageTransitionOverlay />
 
         <div className="hidden 2xl:block">
           <SideNav />

@@ -13,8 +13,9 @@ const SideNav: React.FC = () => {
       <ul className="space-y-2">
         <li>
           <Link
-            to="/learn/basics"
+            to="/learn"
             className={`hover:underline hover:text-teal-400 
+        ${currentPath === "/learn" ? 'text-white' : 'text-slate-400'} 
         ${currentPath === "/learn/basics" ? 'text-white' : 'text-slate-400'} `}
           >
             Basic Animations
