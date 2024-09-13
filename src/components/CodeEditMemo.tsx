@@ -1,10 +1,10 @@
 import React from 'react';
-import CodeEditor from './CodeEditor';
+import CodeEditor, { CodeEditorProps } from './CodeEditor';
 
-const CodeEditorMemo = React.memo(() => {
+const CodeEditorMemo = React.memo(({ startCode, refresh }: CodeEditorProps) => {
   return (
     <div>
-      <CodeEditor />
+      <CodeEditor startCode={startCode} refresh={refresh} />
     </div>
   );
 });

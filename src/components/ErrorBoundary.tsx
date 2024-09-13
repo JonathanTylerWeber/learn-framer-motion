@@ -29,8 +29,10 @@ class ErrorBoundary extends Component<Props, State> {
         <>
           <PageTransitionOverlay />
           <div className="error-boundary text-white mt-96 flex justify-center items-center">
-            <h1 className="font-bold text-2xl">Something went wrong.</h1>
-            <p>We are sorry, but something went wrong. Please try again later.</p>
+            <div>
+              <h1 className="font-bold text-2xl">Something went wrong.</h1>
+              <p className='mt-2'>We are sorry, but something went wrong. Please try again later.</p>
+            </div>
           </div>
         </>
       );

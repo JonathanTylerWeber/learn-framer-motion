@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import { SlideTabs } from './components/SlideTabs';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,86 +39,48 @@ const Navbar = () => {
 
   return (
     <div className='bg-gray-800 fixed top-0 left-0 w-full z-40'>
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button */}
-            <button
-              ref={buttonRef}
-              type="button"
-              onClick={toggleMobileMenu}
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none "
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className={`${isMobileMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-              <svg
-                className={`${isMobileMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                  }
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                  }
-                >
-                  About
-                </NavLink>
-                <NavLink
-                  to="/learn"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                  }
-                >
-                  Learn
-                </NavLink>
-                <NavLink
-                  to="/projects"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                  }
-                >
-                  Projects
-                </NavLink>
-              </div>
+      <div className="mx-auto max-w ">
+        <div className="relative flex h-16 items-center ">
+
+          {/* desktop menu */}
+          <div className="flex items-center ml-20">
+            <div className="hidden sm:flex">
+              <SlideTabs />
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        {/* Mobile menu button */}
+        <button
+          ref={buttonRef}
+          type="button"
+          onClick={toggleMobileMenu}
+          className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none "
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className={`${isMobileMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg
+            className={`${isMobileMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
 
       {/* Mobile menu */}

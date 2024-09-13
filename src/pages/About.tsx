@@ -1,59 +1,66 @@
-import { motion } from "framer-motion";
 import PageTransitionOverlay from "../components/PageTransitionOverlay";
-
-const pathVariants = {
-  hidden: {
-    opacity: 0,
-    pathLength: 0,
-  },
-  visible: {
-    opacity: 1,
-    pathLength: 1,
-    transition: {
-      duration: 3,
-      delay: .5,
-      ease: "easeInOut",
-    },
-  },
-};
 
 const About = () => {
   return (
-    <div
-      className="m-20"
-    >
+    <>
       <PageTransitionOverlay />
+      <div className="max-w-screen-lg mx-auto px-6 py-12 m-20">
+        <h1 className="text-teal-400 text-4xl font-bold text-center mb-8">About This Site</h1>
+        <p className="text-white text-lg mb-6 leading-relaxed">
+          Welcome to my site! I created this platform to help people learn how to use Framer Motion through teaching,
+          because I believe the best way to master something is by sharing it with others. My passion for animations and
+          smooth transitions in web development drove me to build a space where you can experiment with code and see the
+          beauty of motion in action.
+        </p>
+        <p className="text-white text-lg mb-6 leading-relaxed">
+          While I use <span className="text-lime-200 font-bold">Tailwind CSS</span> to style this site, I understand that every developer has their preferences.
+          You can easily style components using inline <span className="text-lime-200 font-bold">style</span> attributes if that fits your workflow better.
+          For example:
+        </p>
+        <div className="bg-gray-800 p-4 rounded-md mb-6">
+          <code className="text-white font-mono text-sm block">
+            {'<motion.div style={{ backgroundColor: "yellow", color: "black" }}>'}<br />
+            {'  // Your content here'}<br />
+            {'</motion.div>'}
+          </code>
+        </div>
+        <p className="text-white text-lg leading-relaxed">
+          Feel free to explore the site, try out different animations, and make it your own.
+          If you're interested in my work, you can find more about me below:
+        </p>
 
-      <motion.svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        width="225.000000pt"
-        height="225.000000pt"
-        viewBox="0 0 225.000000 225.000000"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <g
-          transform="translate(0.000000,225.000000) scale(0.100000,-0.100000)"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="68"
-        >
-          <motion.path
-            variants={pathVariants}
-            initial="hidden"
-            animate="visible"
-            d="M200 1130 l0 -935 233 233 232 232 233 -233 233 -233 234 236 235
-            235 235 -235 235 -236 0 936 0 935 -468 -468 -467 -467 -468 467 -467 468 0
-            -935z m480 395 c345 -344 431 -425 452 -425 21 0 108 81 455 425 235 234 431
-            425 436 425 4 0 7 -369 7 -820 0 -619 -3 -820 -12 -820 -6 0 -98 85 -203 190
-            -140 139 -198 190 -215 190 -18 0 -81 -56 -240 -215 -118 -118 -220 -215 -225
-            -215 -5 0 -106 97 -225 215 -180 178 -222 215 -245 215 -24 0 -62 -33 -219
-            -190 -105 -105 -194 -190 -198 -190 -5 0 -8 369 -8 820 0 451 3 820 7 820 4 0
-            199 -191 433 -425z"
-          />
-        </g>
-      </motion.svg>
-    </div>
+        <p className="my-10 text-center text-6xl text-white font-bold">hands on learning</p>
+        <p className="my-10 text-center text-6xl text-white font-bold">magnet links</p>
+
+        <div className="flex justify-center space-x-6 mt-8">
+          <a
+            href="https://yourwebsite.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-300 hover:text-teal-400 text-lg"
+          >
+            Website
+          </a>
+          <a
+            href="https://linkedin.com/in/yourlinkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-300 hover:text-teal-400 text-lg"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/yourgithub"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-300 hover:text-teal-400 text-lg"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+
+    </>
   );
 };
 

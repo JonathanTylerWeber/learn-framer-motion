@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import pageReducer from './slices/pageSlice';
+import tabReducer from './slices/tabSlice'
 
 // Configure the store
 export const store = configureStore({
   reducer: {
     page: pageReducer,
+    tab: tabReducer,
   },
 });
 

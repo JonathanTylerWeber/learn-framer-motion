@@ -52,3 +52,29 @@ export const scaleAnimationCode = `
   animate={{ scale: 1 }}
 />
 `;
+
+export const gestureCode = `
+<motion.div
+  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full"
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+>
+  Click Me
+</motion.div>
+`;
+
+export const starterClick = `
+<motion.div
+  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full"
+  // add animation
+>
+  Click Me
+</motion.div>
+`
+
+export const starterCircle = `
+<motion.div
+  className="h-[150px] w-[150px] bg-white rounded-full"
+  // add animation 
+/>
+`
