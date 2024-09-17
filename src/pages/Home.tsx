@@ -1,6 +1,7 @@
-// import { motion } from "framer-motion";
-// import { SlideTabsExample } from "../SlideTabs";
+
+import HIGrid from "../components/Grid";
 import PageTransitionOverlay from "../components/PageTransitionOverlay";
+import TiltCard from "../components/TiltCard";
 
 const Home = () => {
   return (
@@ -22,7 +23,7 @@ const Home = () => {
           flexibility to bring your ideas to life. Start experimenting with
           animations today and see how they can transform your web experience!
         </p>
-        {/* <SlideTabsExample /> */}
+        <HIGrid />
         <p className="my-10 text-center text-6xl text-white font-bold">hands on learning</p>
         <p className="mt-20 text-center text-6xl text-white font-bold">Sick examples here</p>
       </div>

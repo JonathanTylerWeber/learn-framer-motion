@@ -10,7 +10,7 @@ import { gestureCode, starterClick } from "../../codeSnippets";
 import CodeEditorMemo from "../../components/CodeEditMemo";
 
 const Gestures = () => {
-  const [selectedOption, setSelectedOption] = useState("basics");
+  const [selectedOption, setSelectedOption] = useState("gestures");
   const navigate = useNavigate();
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

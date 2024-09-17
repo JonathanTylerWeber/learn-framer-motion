@@ -35,7 +35,12 @@ const Basics = () => {
     <>
       <PageTransitionOverlay />
 
-      <div className="flex">
+      <div className="flex w-full">
+
+        <div className="fixed bottom-0 z-30 hidden md:flex w-full">
+          <CodeEditorMemo startCode={starterCircle} refresh={true} />
+        </div>
+
 
         <div className="hidden 2xl:block">
           <SideNav />
@@ -99,7 +104,7 @@ const Basics = () => {
 
           <p className="text-white text-center text-3xl mt-10">Try adding an animation below!</p>
 
-          <div className="my-20">
+          <div className="my-20 md:hidden">
             <CodeEditorMemo startCode={starterCircle} refresh={true} />
           </div>
 

@@ -19,7 +19,10 @@ export const SlideTabs = () => {
   const location = useLocation(); // Get the current path
 
   useEffect(() => {
-    dispatch(setActiveTab(location.pathname));
+    let activeTabPath = location.pathname;
+    if (location.pathname.startsWith('/learn')) {
+      activeTabPath = '/learn'; // Set the active tab to "Learn" for any subroute
+    }
   }, [location, dispatch]);
 
   useEffect(() => {

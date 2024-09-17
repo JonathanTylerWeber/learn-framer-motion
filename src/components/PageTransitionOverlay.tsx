@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
 const overlayVariants = {
-  hidden: { y: "0%", borderRadius: "0%" },
+  hidden: { y: "-5%", borderRadius: "0%" },
   visible: { y: "-100%", borderRadius: "100%" },
-  exit: { y: "0%", borderRadius: "0%" },
+  exit: { y: "-5%", borderRadius: "0%" },
 };
 
 const PageTransitionOverlay = () => {
@@ -14,7 +14,7 @@ const PageTransitionOverlay = () => {
 
   return (
     <motion.div
-      className="fixed inset-0 bg-gray-800 z-30"
+      className="fixed inset-0 bg-gray-800 z-40 h-[110vh]"
       variants={overlayVariants}
       initial="hidden"
       animate="visible"
