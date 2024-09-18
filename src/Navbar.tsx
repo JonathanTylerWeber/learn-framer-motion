@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+      <div className="absolute inset-y-0 left-6 h-16 flex items-center sm:hidden">
         {/* Mobile menu button */}
         <button
           ref={buttonRef}
@@ -86,7 +86,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       {isMobileMenuOpen && (
         <div ref={menuRef} className="sm:hidden" id="mobile-menu">
-          <div className="space-y-1 px-2 pb-3 pt-2">
+          <div className="space-y-1 px-6 pb-3 pt-2">
             <NavLink
               to="/"
               onClick={closeMobileMenu}
@@ -122,10 +122,11 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/projects"
+              onClick={closeMobileMenu}
               className={({ isActive }) =>
                 isActive
-                  ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                  : "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  ? "block bg-gray-900 text-white rounded-md px-3 py-2 text-base font-medium"
+                  : "block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium"
               }
             >
               Projects

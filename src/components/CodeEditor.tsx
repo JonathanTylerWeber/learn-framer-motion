@@ -50,7 +50,7 @@ const CodeEditor = ({ startCode, refresh }: CodeEditorProps) => {
     <LiveProvider code={code} scope={{ motion }} theme={themes.nightOwl} key={runAnimation ? 'refresh' : 'static'}>
 
       {/* Main container */}
-      <div className='relative w-full  transition-all duration-500' style={{ height: getEditorHeight() }}>
+      <div className='hidden md:block relative w-full transition-all duration-500' style={{ height: getEditorHeight() }}>
 
         {/* Gradient overlay */}
         <div className="absolute inset-x-0 top-0 h-[30px] bg-gradient-to-t from-slate-900 to-transparent z-20" />
