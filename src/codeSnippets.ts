@@ -65,7 +65,7 @@ export const gestureCode = `
 
 export const starterClick = `
 <motion.div
-  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full"
+  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full cursor-pointer"
   // add animation
 >
   Click Me

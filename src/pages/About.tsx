@@ -14,7 +14,7 @@ const About = () => {
         </p>
         <p className="text-white text-lg mb-6 leading-relaxed">
           While I use <span className="text-lime-200 font-bold">Tailwind CSS</span> to style this site, I understand that every developer has their preferences.
-          You can easily style components using inline <span className="text-lime-200 font-bold">style</span> attributes if that fits your workflow better.
+          You can easily style components using inline <span className="text-lime-200 font-bold">CSS style</span> attributes if that fits your workflow better.
           For example:
         </p>
         <div className="bg-gray-800 p-4 rounded-md mb-6">
@@ -31,6 +31,7 @@ const About = () => {
 
         <p className="my-10 text-center text-6xl text-white font-bold">hands on learning</p>
         <p className="my-10 text-center text-6xl text-white font-bold">magnet links</p>
+        <p className="my-10 text-center text-6xl text-white font-bold">links to setup framer motion and tailwind</p>
 
         <div className="flex justify-center space-x-6 mt-8">
           <a

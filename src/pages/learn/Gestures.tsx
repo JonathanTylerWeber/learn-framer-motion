@@ -21,7 +21,7 @@ const Gestures = () => {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex w-full">
 
         <PageTransitionOverlay />
 
@@ -29,7 +29,11 @@ const Gestures = () => {
           <SideNav />
         </div>
 
-        <div className="mx-auto w-full max-w-screen-xl">
+        <div className="fixed bottom-0 z-30 hidden md:flex w-full">
+          <CodeEditorMemo startCode={starterClick.trim()} refresh={false} />
+        </div>
+
+        <div className="mx-auto w-full max-w-screen-xl mb-[50vh]">
 
           <SelectDropdown
             selectedOption={selectedOption}
@@ -68,9 +72,9 @@ const Gestures = () => {
 
             {/* Animation and button column */}
             <div className="flex flex-col items-center justify-center">
-              <div className="w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-700 p-4 flex justify-center items-center rounded-md">
+              <div className="w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-900 p-4 flex justify-center items-center rounded-md">
                 <motion.div
-                  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full"
+                  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full cursor-pointer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -82,9 +86,7 @@ const Gestures = () => {
 
           <p className="text-white text-center text-3xl mt-10">Try adding an animation below!</p>
 
-          <div className="my-20">
-            <CodeEditorMemo startCode={starterClick} refresh={false} />
-          </div>
+
 
           <div className="mx-6 sm:mx-10 lg:mx-36 mt-10">
             <p className="text-white  text-xl mb-10">There are many different props and values that you can change to create animations. Try some more examples in the code editor above and mix/match different ones. You can add multiple properties to each prop, for example:

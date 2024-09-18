@@ -25,7 +25,7 @@ const Home = () => {
         </p>
         <HIGrid />
         <p className="my-10 text-center text-6xl text-white font-bold">hands on learning</p>
-        <p className="mt-20 text-center text-6xl text-white font-bold">Sick examples here</p>
+        <p className="mt-20 text-center text-6xl text-white font-bold">Sick scroll animations</p>
       </div>
 
     </>

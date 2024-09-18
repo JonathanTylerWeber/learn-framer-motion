@@ -37,16 +37,15 @@ const Basics = () => {
 
       <div className="flex w-full">
 
-        <div className="fixed bottom-0 z-30 hidden md:flex w-full">
-          <CodeEditorMemo startCode={starterCircle} refresh={true} />
-        </div>
-
-
         <div className="hidden 2xl:block">
           <SideNav />
         </div>
 
-        <div className="mx-auto w-full max-w-screen-xl">
+        <div className="fixed bottom-0 z-30 hidden md:flex w-full">
+          <CodeEditorMemo startCode={starterCircle.trim()} refresh={true} />
+        </div>
+
+        <div className="mx-auto w-full max-w-screen-xl mb-[50vh]">
 
           <SelectDropdown
             selectedOption={selectedOption}
@@ -83,7 +82,7 @@ const Basics = () => {
 
             {/* Animation and button column */}
             <div className="flex flex-col items-center justify-center">
-              <div className="w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-700 p-4 flex justify-center items-center rounded-md">
+              <div className="w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-900 p-4 flex justify-center items-center rounded-md">
                 <motion.div
                   key={animateKey}
                   initial={{ opacity: 0 }}

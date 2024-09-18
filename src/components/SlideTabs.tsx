@@ -21,21 +21,21 @@ export const SlideTabs = () => {
   useEffect(() => {
     let activeTabPath = location.pathname;
     if (location.pathname.startsWith('/learn')) {
-      activeTabPath = '/learn'; // Set the active tab to "Learn" for any subroute
+      activeTabPath = '/learn/basics'; // Set the active tab to "Learn" for any subroute
     }
-  }, [location, dispatch]);
 
-  useEffect(() => {
-    // Update the cursor position whenever the active tab changes
-    const tabClassName = `tab-${sanitizeClassName(activeTab)}`;
+    // Set the active tab state
+    dispatch(setActiveTab(activeTabPath));
+
+    // Update the cursor position based on the active tab
+    const tabClassName = `tab-${sanitizeClassName(activeTabPath)}`;
     const activeTabElement = document.querySelector(`.${tabClassName}`);
     if (activeTabElement) {
       const { offsetLeft } = activeTabElement as HTMLElement;
       const { width } = activeTabElement.getBoundingClientRect();
       setPosition({ left: offsetLeft, width, opacity: 1 });
     }
-  }, [activeTab]);
-
+  }, [location, dispatch]);
   return (
     <ul
       onMouseLeave={() => {
