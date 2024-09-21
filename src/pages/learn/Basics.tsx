@@ -15,6 +15,7 @@ import SideNav from "../../components/SideNav";
 import { useNavigate } from "react-router-dom";
 import SelectDropdown from "../../components/SelectDropDown";
 import PageTransitionOverlay from "../../components/PageTransitionOverlay";
+import { IoMdRefresh } from "react-icons/io";
 
 const Basics = () => {
   const [animateKey, setAnimateKey] = useState(0);
@@ -82,24 +83,28 @@ const Basics = () => {
 
             {/* Animation and button column */}
             <div className="flex flex-col items-center justify-center">
-              <div className="w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-900 p-4 flex justify-center items-center rounded-md">
+              <div className="relative w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-900 p-4 flex justify-center items-center rounded-md">
                 <motion.div
                   key={animateKey}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 2 }}
+                  className="relative"
                 >
                   <div className="h-[150px] w-[150px] bg-white rounded-full"></div>
                 </motion.div>
+
+                {/* Refresh Button */}
+                <button
+                  onClick={handleRefresh}
+                  className="absolute top-2 right-2 px-4 py-2 text-xl bg-white text-teal-800 rounded-md hover:bg-teal-600 hover:text-white"
+                >
+                  <IoMdRefresh />
+                </button>
               </div>
-              <button
-                onClick={handleRefresh}
-                className="mt-4 px-4 py-2 bg-teal-500 text-white rounded-md hover:bg-teal-600"
-              >
-                Refresh Animation
-              </button>
             </div>
           </div>
+
 
           <p className="text-white text-center text-3xl mt-10">Try adding an animation below!</p>
 

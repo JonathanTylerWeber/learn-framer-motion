@@ -120,9 +120,9 @@ const CodeEditor = ({ startCode, refresh }: CodeEditorProps) => {
               {refresh && (
                 <button
                   onClick={handleRunAnimation}
-                  className="absolute top-10 right-10 px-4 py-2 bg-white text-teal-800 rounded-md hover:bg-teal-900 hover:text-white"
+                  className="absolute top-10 right-10 px-4 py-2 bg-white text-teal-800 rounded-md hover:bg-teal-600 hover:text-white "
                 >
-                  <IoMdRefresh />
+                  <IoMdRefresh className='text-xl' />
                 </button>
               )}
             </div>
