@@ -17,20 +17,19 @@ const About = () => {
           beauty of motion in action.
         </p>
         <p className="text-white text-lg mb-6 leading-relaxed">
-          While I use <span className="text-lime-200 font-bold">Tailwind CSS</span> to style this site, I understand that every developer has their preferences.
-          You can easily style components using inline <span className="text-lime-200 font-bold">CSS style</span> attributes if that fits your workflow better.
+          While I use <span className="text-lime-200 font-bold">Tailwind CSS</span> to style this site, you can easily style components on this site using inline <span className="text-lime-200 font-bold">CSS style</span> attributes if that fits your workflow better.
           For example:
         </p>
         <div className="bg-gray-800 p-4 rounded-md mb-6">
           <code className="text-white font-mono text-sm block">
-            {'<motion.div style={{ backgroundColor: "yellow", color: "black" }}>'}<br />
+            {'<motion.div style={{ backgroundColor: "#ffffff", color: "#ffff00" }}>'}<br />
             {'  // Your content here'}<br />
             {'</motion.div>'}
           </code>
         </div>
 
         <p className="text-white text-lg mb-6 leading-relaxed">
-          To set up Framer Motion in your React project, you can follow these steps:
+          To set up <span className="text-lime-200 font-bold">Framer Motion</span> in your React project, you can follow these steps:
         </p>
         <div className="bg-gray-800 p-4 rounded-md mb-6">
           <code className="text-white font-mono text-sm block">

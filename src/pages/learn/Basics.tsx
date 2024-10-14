@@ -58,9 +58,41 @@ const Basics = () => {
           </h1>
           <div className="mx-6 sm:mx-10 lg:mx-36 mt-10">
             <p className="text-white mb-4 text-lg px-4 sm:px-8">
-              The <code className="text-lime-200">'&lt;motion.div&gt;'</code> component from Framer Motion allows you to add animations to your React components with ease. Framer Motion provides a set of components and hooks that make it simple to animate elements with powerful and smooth transitions.
-              <br />
-              <br />
+              The <code className="text-lime-200">'&lt;motion&gt;'</code> component from Framer Motion allows you to add animations to your HTML elements and SVGs with ease. Framer Motion provides a set of components and hooks that make it simple to animate elements with powerful and smooth transitions. Click the refresh button below to see the animation.
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10 mx-4 sm:mx-10 ">
+              {/* Code snippet column */}
+              <div className="flex items-center justify-center">
+                <div className="w-full">
+                  <CodeSnippet code={fadeInCode} />
+                </div>
+              </div>
+
+              {/* Animation and button column */}
+              <div className="flex flex-col items-center justify-center">
+                <div className="relative w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-900 p-4 flex justify-center items-center rounded-md">
+                  <motion.div
+                    key={animateKey}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 2 }}
+                    className="relative"
+                  >
+                    <div className="h-[150px] w-[150px] bg-white rounded-full"></div>
+                  </motion.div>
+
+                  {/* Refresh Button */}
+                  <button
+                    onClick={handleRefresh}
+                    className="absolute top-2 right-2 px-4 py-2 text-xl bg-white text-teal-800 rounded-md hover:bg-teal-600 hover:text-white"
+                  >
+                    <IoMdRefresh />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <p className="text-white mb-4 mt-8 text-lg px-4 sm:px-8">
               In this example, we're using <code className="text-lime-200">'&lt;motion.div&gt;'</code> to create a fade-in animation for a circular div element. Here’s what’s happening in the animation:
             </p>
             <ul className="list-disc list-inside mt-2 px-4 sm:px-8 my-6 text-white">
@@ -73,49 +105,16 @@ const Basics = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10 mx-4 sm:mx-10 lg:mx-28">
-            {/* Code snippet column */}
-            <div className="flex items-center justify-center">
-              <div className="w-full">
-                <CodeSnippet code={fadeInCode} />
-              </div>
-            </div>
-
-            {/* Animation and button column */}
-            <div className="flex flex-col items-center justify-center">
-              <div className="relative w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-900 p-4 flex justify-center items-center rounded-md">
-                <motion.div
-                  key={animateKey}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 2 }}
-                  className="relative"
-                >
-                  <div className="h-[150px] w-[150px] bg-white rounded-full"></div>
-                </motion.div>
-
-                {/* Refresh Button */}
-                <button
-                  onClick={handleRefresh}
-                  className="absolute top-2 right-2 px-4 py-2 text-xl bg-white text-teal-800 rounded-md hover:bg-teal-600 hover:text-white"
-                >
-                  <IoMdRefresh />
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-          <p className="text-white text-center text-3xl mt-10">Try adding an animation below!</p>
+          <p className="text-white text-center text-3xl mt-10">Try adding an animation to the code editor!</p>
 
           <div className="my-20 md:hidden">
             <CodeEditorMemo startCode={starterCircle} refresh={true} />
           </div>
 
           <div className="mx-6 sm:mx-10 lg:mx-36 mt-10">
-            <p className="text-white  text-xl mb-10">There are many different props and values that you can change to create animations. Try some more examples in the code editor above and mix/match different ones. You can add multiple properties to each prop, for example:
-              <code className="text-lime-200">'initial = &#123;&#123;opacity: 0, rotate:0&#125;&#125;
-                animate= &#123;&#123;opacity: 1, rotate: 180&#125;&#125;'</code></p>
+            <p className="text-white  text-xl mb-10">There are many different props and values that you can change to create animations. Try some more examples in the code editor and mix/match different ones. You can add multiple properties to each prop, for example:
+              <code className="text-lime-200">'initial = &#123;&#123;opacity: 0, x:0&#125;&#125;
+                animate= &#123;&#123;opacity: 1, x: 180&#125;&#125;'</code></p>
 
             {/* Animating Text */}
             <div className="mb-16">

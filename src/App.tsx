@@ -13,6 +13,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { setPageText } from './slices/pageSlice';
+import ScrollToTop from './components/ScrollToTop';
 
 
 export default function App() {
@@ -48,6 +49,7 @@ export default function App() {
       <Navbar />
       <ErrorBoundary>
         <AnimatePresence mode='wait' >
+          <ScrollToTop />
           <Routes location={location} key={location.pathname} >
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

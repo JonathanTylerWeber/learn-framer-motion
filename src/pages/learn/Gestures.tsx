@@ -46,13 +46,13 @@ const Gestures = () => {
 
           <div className="mx-6 sm:mx-10 lg:mx-36 mt-10">
             <p className="text-white mb-4 text-lg px-4 sm:px-8">
-              Gestures are a key part of interactive UIs, allowing users to interact with elements using touch or mouse inputs. Framer Motion offers powerful gesture handling capabilities to make these interactions smooth and intuitive. In this section, you'll learn how to implement and animate gestures using the <code>'&lt; motion.div /&gt;'</code> component from Framer Motion.
+              Gestures are a key part of interactive UIs, allowing users to interact with elements using touch or mouse inputs. Framer Motion offers powerful gesture handling capabilities to make these interactions smooth and intuitive. In this section, you'll learn how to implement and animate gestures using the <code className="text-lime-200">'&lt;motion&gt;'</code> component from Framer Motion.
               <br />
               <br />
               Here's a brief overview of how gestures work with Framer Motion:
             </p>
             <ul className="list-disc list-inside mt-2 px-4 sm:px-8 my-6 text-white">
-              <li><strong>Gestures:</strong> Framer Motion provides gesture handlers like <code>`whileHover`</code>, <code>`whileTap`</code>, and <code>`drag`</code> to create interactive animations based on user input.</li>
+              <li><strong>Gestures:</strong> Framer Motion provides gesture handlers like <code className="text-lime-200">`whileHover`</code>, <code className="text-lime-200">`whileTap`</code>, and <code className="text-lime-200">`drag`</code> to create interactive animations based on user input.</li>
               <li><strong>Initial State:</strong> Define the initial state of the element before any gestures are applied, such as scale, opacity, or position.</li>
               <li><strong>Animate State:</strong> Set the desired end state for the element when a gesture is detected, such as scaling up, changing color, or moving.</li>
               <li><strong>Transition:</strong> Control the timing and easing of the gesture-based animation to make the interaction feel natural and responsive.</li>
@@ -60,38 +60,42 @@ const Gestures = () => {
             <p className="text-white mb-4 text-lg px-4 sm:px-8">
               By using gestures in Framer Motion, you can enhance the user experience with dynamic and interactive elements. For example, you can make buttons grow when hovered over or animate elements as users drag them across the screen. Experiment with different gesture handlers and animations to see how they can be used to create engaging interactions.
             </p>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10 mx-4 sm:mx-10 lg:mx-28">
-            {/* Code snippet column */}
-            <div className="flex items-center justify-center">
-              <div className="w-full">
-                <CodeSnippet code={gestureCode} />
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10 mx-4 sm:mx-10 lg:mx-28">
+              {/* Code snippet column */}
+              <div className="flex items-center justify-center">
+                <div className="w-full">
+                  <CodeSnippet code={gestureCode} />
+                </div>
+              </div>
+
+              {/* Animation and button column */}
+              <div className="flex flex-col items-center justify-center">
+                <div className="w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-900 p-4 flex justify-center items-center rounded-md">
+                  <motion.div
+                    className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full cursor-pointer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    Click Me
+                  </motion.div>
+                </div>
               </div>
             </div>
 
-            {/* Animation and button column */}
-            <div className="flex flex-col items-center justify-center">
-              <div className="w-full max-w-full md:max-w-[400px] h-[300px] bg-teal-900 p-4 flex justify-center items-center rounded-md">
-                <motion.div
-                  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full cursor-pointer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  Click Me
-                </motion.div>
-              </div>
-            </div>
+            <p className="text-white mb-4 mt-8 text-lg px-4 sm:px-8">
+              In this example, we’re using <code className="text-lime-200">'&lt;motion.div&gt;'</code> to create interactive animations for a button element. Here’s what’s happening with the gestures:
+            </p>
+            <ul className="list-disc list-inside mt-2 px-4 sm:px-8 my-6 text-white">
+              <li><strong>Hover State:</strong> The <code className="text-lime-200">'whileHover= &#123;&#123;scale: 1.1&#125;&#125;'</code> prop defines the behavior when the button is hovered. It scales the button to 110% of its original size,making the button appear to "pop out".</li>
+              <li><strong>Tap State:</strong> The <code className="text-lime-200">'whileTap= &#123;&#123;scale: 0.9&#125;&#125;'</code> prop controls what happens when the button is clicked or tapped. It shrinks the button to 90% of its original size, giving the effect of the button being pressed down.</li>
+            </ul>
           </div>
 
-          <p className="text-white text-center text-3xl mt-10">Try adding an animation below!</p>
-
-
+          <p className="text-white text-center text-3xl mt-10">Try using gestures in the Code Editor!</p>
 
           <div className="mx-6 sm:mx-10 lg:mx-36 mt-10">
-            <p className="text-white  text-xl mb-10">There are many different props and values that you can change to create animations. Try some more examples in the code editor above and mix/match different ones. You can add multiple properties to each prop, for example:
-              <code>'initial = &#123;&#123;opacity: 0, rotate:0&#125;&#125;
-                animate= &#123;&#123;opacity: 1, rotate: 180&#125;&#125;'</code></p>
 
             {/* Animating Text */}
             {/* <div className="mb-16">

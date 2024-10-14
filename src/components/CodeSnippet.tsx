@@ -7,7 +7,7 @@ interface CodeSnippetProps {
 
 const CodeSnippet: React.FC<CodeSnippetProps> = ({ code }) => {
   const handleCopy = () => {
-    copyToClipboard(code);
+    copyToClipboard(code.trim());
   };
 
   return (
