@@ -1,7 +1,7 @@
 
-import HIGrid from "../components/Grid";
+// import HIGrid from "../components/Grid";
+import { Example } from "../components/Example";
 import PageTransitionOverlay from "../components/PageTransitionOverlay";
-import TiltCard from "../components/TiltCard";
 
 const Home = () => {
   return (
@@ -23,9 +23,15 @@ const Home = () => {
           flexibility to bring your ideas to life. Start experimenting with
           animations today and see how they can transform your web experience!
         </p>
-        <HIGrid />
-        <p className="my-10 text-center text-6xl text-white font-bold">hands on learning</p>
-        <p className="mt-20 text-center text-6xl text-white font-bold">Sick scroll animations</p>
+        {/* <HIGrid /> */}
+        {/* <p className="my-10 text-center text-6xl text-white font-bold">hands on learning</p>
+        <p className="mt-20 text-center text-6xl text-white font-bold">Sick scroll animations</p> */}
+
+        <Example />
+
+
+
+
       </div>
 
     </>
