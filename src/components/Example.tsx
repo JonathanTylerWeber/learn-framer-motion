@@ -2,19 +2,20 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 export function Example() {
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [degrees, setDegrees] = useState(0);
+  // const [isAnimating, setIsAnimating] = useState(false);
 
-  // Toggle animation state to re-trigger the animation
-  const refreshAnimation = () => {
-    setIsAnimating(false); // Reset animation state
-    setTimeout(() => setIsAnimating(true), 10); // Trigger animation with a slight delay
-  };
+  // const refreshAnimation = () => {
+  //   setIsAnimating(false);
+  //   setTimeout(() => setIsAnimating(true), 10);
+  // };
 
   const [animate, setAnimate] = useState({ scale: 1, rotate: 0 });
 
-  // Increment the rotation by 45 degrees
-  const add45 = () => setDegrees((prevDegrees) => prevDegrees + 45);
+  const childVariants = {
+    initial: { x: 50, opacity: 0, backgroundColor: "#fa2" },
+    start: { x: 0, opacity: 1 },
+    tapState: { backgroundColor: "#f00" },
+  };
 
   return (
     <>
@@ -26,12 +27,12 @@ export function Example() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#333", // Background for better visibility
+          backgroundColor: "white", // Background for better visibility
           position: "relative",
         }}
       >
         {/* Refresh Button */}
-        <button
+        {/* <button
           onClick={refreshAnimation}
           style={{
             position: "absolute",
@@ -46,25 +47,43 @@ export function Example() {
           }}
         >
           Refresh
-        </button>
+        </button> */}
 
         {/* Animated Element */}
+        {/* <motion.div
+          // key={isAnimating ? "animate" : "reset"}
+          variants={{
+            initial: { opacity: 0 },
+            start: { opacity: 1 },
+            hoverState: { scale: 1.05 },
+          }}
+          initial="initial"
+          animate="start"
+          whileHover="hoverState"
+          whileTap="tapState"
+          transition={{ delayChildren: 0.2, staggerChildren: 0.2 }}
+        >
+          <motion.div variants={childVariants} />
+          <motion.div variants={childVariants} />
+          <motion.div variants={childVariants} />
+        </motion.div> */}
+
         <motion.div
-          key={isAnimating ? "animate" : "reset"} // Force re-render with a new key
-          style={{
-            width: 150,
-            height: 150,
-            borderRadius: 30,
-            backgroundColor: "#fff",
-            boxShadow: "0px -300px 80px 100px rgba(255, 255, 255, .3)", // Initial shadow
+          variants={{
+            initial: { skewX: -10, opacity: 0 },
+            start: { skewX: 0, opacity: 1 },
+            hoverState: { scale: 1.05 },
           }}
-          initial={{ backgroundColor: "#fff" }} // Initial state
-          animate={{
-            backgroundColor: "#08f", // Animate to new color
-            boxShadow: "0px 0px 80px 30px #fff", // Animate shadow
-          }}
-          transition={{ duration: 2 }} // Smooth 2-second animation
-        />
+          initial="initial"
+          animate="start"
+          whileHover="hoverState"
+          whileTap="tapState"
+          transition={{ delayChildren: 0.2, staggerChildren: 0.2 }}
+        >
+          <motion.div variants={childVariants} />
+          <motion.div variants={childVariants} />
+          <motion.div variants={childVariants} />
+        </motion.div>
       </div>
 
       {/* Rotating Element */}
@@ -93,7 +112,6 @@ export function Example() {
         >
           {/* {Math.round(degrees)} */}
         </motion.div>
-
       </div>
     </>
   );

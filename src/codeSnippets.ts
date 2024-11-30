@@ -1,3 +1,4 @@
+// basics
 export const fadeInCode = `
 <motion.div
   className="h-[150px] w-[150px] bg-white rounded-full"
@@ -53,6 +54,23 @@ export const scaleAnimationCode = `
 />
 `;
 
+export const starterCircle = `
+<motion.div
+  className="h-[150px] w-[150px] bg-white rounded-full"
+  // add animation 
+/>
+`;
+
+// gestures
+export const starterClick = `
+<motion.div
+  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full cursor-pointer"
+  // add animation
+>
+  Click Me
+</motion.div>
+`;
+
 export const gestureCode = `
 <motion.div
   className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full"
@@ -63,18 +81,46 @@ export const gestureCode = `
 </motion.div>
 `;
 
-export const starterClick = `
+export const whileHoverCode = `
 <motion.div
   className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full cursor-pointer"
-  // add animation
+  whileHover={{ scale: 1.1 }}
 >
-  Click Me
+  Hover Me
 </motion.div>
-`
+`;
 
-export const starterCircle = `
+export const whileTapCode = `
 <motion.div
-  className="h-[150px] w-[150px] bg-white rounded-full"
-  // add animation 
+  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full cursor-pointer"
+  whileTap={{ scale: 0.9 }}
+>
+  Tap Me
+</motion.div>
+`;
+
+export const whileFocusCode = `
+<motion.input
+  className="w-48 h-12 bg-white text-black rounded-full px-4 py-2 outline-none"
+  style={{ 
+    background: 'white',
+    outline: 'none'
+  }}  
+  whileFocus={{
+    background: 'yellow', 
+  }}
+  placeholder="Focus Me"
 />
-`
+
+`;
+
+export const whileDragCode = `
+<motion.div
+  className="w-48 h-12 bg-white text-black flex items-center justify-center rounded-full cursor-grab"
+  whileDrag={{ rotate: 15 }}
+  whileTap={{ cursor: 'grabbing' }}
+  drag
+>
+  Drag Me
+</motion.div>
+`;

@@ -23,7 +23,7 @@ const Basics = () => {
   const navigate = useNavigate();
 
   const handleRefresh = () => {
-    setAnimateKey(prevKey => prevKey + 1);
+    setAnimateKey((prevKey) => prevKey + 1);
   };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -37,7 +37,6 @@ const Basics = () => {
       <PageTransitionOverlay />
 
       <div className="flex w-full">
-
         <div className="hidden 2xl:block">
           <SideNav />
         </div>
@@ -46,8 +45,7 @@ const Basics = () => {
           <CodeEditorMemo startCode={starterCircle.trim()} refresh={true} />
         </div>
 
-        <div className="mx-auto w-full max-w-screen-xl mb-[50vh]">
-
+        <div className="mx-auto w-full max-w-screen-xl md:mb-[30vh] xl:mb-[50vh]">
           <SelectDropdown
             selectedOption={selectedOption}
             onSelectChange={handleSelectChange}
@@ -58,7 +56,12 @@ const Basics = () => {
           </h1>
           <div className="mx-6 sm:mx-10 lg:mx-36 mt-10">
             <p className="text-white mb-4 text-lg px-4 sm:px-8">
-              The <code className="text-lime-200">'&lt;motion&gt;'</code> component from Framer Motion allows you to add animations to your HTML elements and SVGs with ease. Framer Motion provides a set of components and hooks that make it simple to animate elements with powerful and smooth transitions. Click the refresh button below to see the animation.
+              The <code className="text-lime-200">'&lt;motion&gt;'</code>{" "}
+              component from Framer Motion allows you to add animations to your
+              HTML elements and SVGs with ease. Framer Motion provides a set of
+              components and hooks that make it simple to animate elements with
+              powerful and smooth transitions. Click the refresh button below to
+              see the animation.
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10 mx-4 sm:mx-10 ">
@@ -93,71 +96,137 @@ const Basics = () => {
               </div>
             </div>
             <p className="text-white mb-4 mt-8 text-lg px-4 sm:px-8">
-              In this example, we're using <code className="text-lime-200">'&lt;motion.div&gt;'</code> to create a fade-in animation for a circular div element. Here’s what’s happening in the animation:
+              In this example, we're using{" "}
+              <code className="text-lime-200">'&lt;motion.div&gt;'</code> to
+              create a fade-in animation for a circular div element. Here’s
+              what’s happening in the animation:
             </p>
             <ul className="list-disc list-inside mt-2 px-4 sm:px-8 my-6 text-white">
-              <li><strong>Initial State:</strong> The <code className="text-lime-200">'initial= &#123;&#123;opacity: 0&#125;&#125;'</code> prop sets the initial opacity of the div to 0, making it fully transparent when the animation starts.</li>
-              <li><strong>Animate State:</strong> The <code className="text-lime-200">'animate= &#123;&#123;opacity: 1&#125;&#125;'</code> prop defines the end state of the animation, setting the opacity to 1, which makes the div fully opaque and visible.</li>
-              <li><strong>Transition:</strong> The <code className="text-lime-200">'transition= &#123;&#123;duration: 2&#125;&#125;'</code> prop controls the duration of the animation, specifying that it should take 2 seconds to transition from opacity 0 to opacity 1.</li>
+              <li>
+                <strong>Initial State:</strong> The{" "}
+                <code className="text-lime-200">
+                  'initial= &#123;&#123;opacity: 0&#125;&#125;'
+                </code>{" "}
+                prop sets the initial opacity of the div to 0, making it fully
+                transparent when the animation starts.
+              </li>
+              <li>
+                <strong>Animate State:</strong> The{" "}
+                <code className="text-lime-200">
+                  'animate= &#123;&#123;opacity: 1&#125;&#125;'
+                </code>{" "}
+                prop defines the end state of the animation, setting the opacity
+                to 1, which makes the div fully opaque and visible.
+              </li>
+              <li>
+                <strong>Transition:</strong> The{" "}
+                <code className="text-lime-200">
+                  'transition= &#123;&#123;duration: 2&#125;&#125;'
+                </code>{" "}
+                prop controls the duration of the animation, specifying that it
+                should take 2 seconds to transition from opacity 0 to opacity 1.
+              </li>
             </ul>
             <p className="text-white mb-4 text-lg px-4 sm:px-8">
-              By clicking the "Refresh Animation" button, the <code className="text-lime-200">'key'</code> prop of the <code className="text-lime-200">'&lt;motion.div&gt;'</code> component is updated, causing the component to re-render and restart the animation. This technique ensures that the animation runs again every time you press the button, demonstrating how you can use Framer Motion to create dynamic and interactive UI elements.
+              By clicking the "Refresh Animation" button, the{" "}
+              <code className="text-lime-200">'key'</code> prop of the{" "}
+              <code className="text-lime-200">'&lt;motion.div&gt;'</code>{" "}
+              component is updated, causing the component to re-render and
+              restart the animation. This technique ensures that the animation
+              runs again every time you press the button, demonstrating how you
+              can use Framer Motion to create dynamic and interactive UI
+              elements.
             </p>
           </div>
 
-          <p className="text-white text-center text-3xl mt-10">Try adding an animation to the code editor!</p>
+          <p className="text-white text-center text-3xl mt-10 px-2">
+            Try adding an animation to the code editor!
+          </p>
 
           <div className="my-20 md:hidden">
             <CodeEditorMemo startCode={starterCircle} refresh={true} />
           </div>
 
           <div className="mx-6 sm:mx-10 lg:mx-36 mt-10">
-            <p className="text-white  text-xl mb-10">There are many different props and values that you can change to create animations. Try some more examples in the code editor and mix/match different ones. You can add multiple properties to each prop, for example:
-              <code className="text-lime-200">'initial = &#123;&#123;opacity: 0, x:0&#125;&#125;
-                animate= &#123;&#123;opacity: 1, x: 180&#125;&#125;'</code></p>
+            <p className="text-white  text-xl mb-10">
+              There are many different props and values that you can change to
+              create animations. Try some more examples in the code editor and
+              mix/match different ones. You can add multiple properties to each
+              prop, for example:
+              <code className="text-lime-200">
+                'initial = &#123;&#123;opacity: 0, x:0&#125;&#125; animate=
+                &#123;&#123;opacity: 1, x: 180&#125;&#125;'
+              </code>
+            </p>
 
             {/* Animating Text */}
             <div className="mb-16">
-              <h2 className="text-teal-400 text-2xl font-bold mb-2">Animating Text</h2>
+              <h2 className="text-teal-400 text-2xl font-bold mb-2">
+                Animating Text
+              </h2>
               <CodeSnippet code={textAnimationCode} />
               <p className="text-white my-4 text-lg px-4 sm:px-8">
-                You can animate text by applying motion to the <code className="text-lime-200">'&lt;p&gt;'</code> element or any other text element. This example demonstrates how to fade in the text "Hello World" from opacity 0 to opacity 1 over 2 seconds.
+                You can animate text by applying motion to the{" "}
+                <code className="text-lime-200">'&lt;p&gt;'</code> element or
+                any other text element. This example demonstrates how to fade in
+                the text "Hello World" from opacity 0 to opacity 1 over 2
+                seconds.
               </p>
             </div>
 
             {/* Animating Colors */}
             <div className="mb-16">
-              <h2 className="text-teal-400 text-2xl font-bold mb-2">Animating Colors</h2>
+              <h2 className="text-teal-400 text-2xl font-bold mb-2">
+                Animating Colors
+              </h2>
               <CodeSnippet code={colorAnimationCode} />
               <p className="text-white my-4 text-lg px-4 sm:px-8">
-                You can animate the color of elements by changing the <code className="text-lime-200">'backgroundColor'</code> and <code className="text-lime-200">'color'</code> properties. This example transitions the background color of the div from white to yellow.
+                You can animate the color of elements by changing the{" "}
+                <code className="text-lime-200">'backgroundColor'</code> and{" "}
+                <code className="text-lime-200">'color'</code> properties. This
+                example transitions the background color of the div from white
+                to yellow.
               </p>
             </div>
 
             {/* Animating Position (X and Y) */}
             <div className="mb-16">
-              <h2 className="text-teal-400 text-2xl font-bold mb-2">Animating Position (X and Y)</h2>
+              <h2 className="text-teal-400 text-2xl font-bold mb-2">
+                Animating Position (X and Y)
+              </h2>
               <CodeSnippet code={positionAnimationCode} />
               <p className="text-white my-4 text-lg px-4 sm:px-8">
-                To animate the position of an element along the x and y axes, use the <code className="text-lime-200">'x'</code> and <code className="text-lime-200">'y'</code> properties. This example moves the element 100 pixels to the right and 100 pixels down.
+                To animate the position of an element along the x and y axes,
+                use the <code className="text-lime-200">'x'</code> and{" "}
+                <code className="text-lime-200">'y'</code> properties. This
+                example moves the element 100 pixels to the right and 100 pixels
+                down.
               </p>
             </div>
 
             {/* Animating Rotation */}
             <div className="mb-16">
-              <h2 className="text-teal-400 text-2xl font-bold mb-2">Animating Rotation</h2>
+              <h2 className="text-teal-400 text-2xl font-bold mb-2">
+                Animating Rotation
+              </h2>
               <CodeSnippet code={rotationAnimationCode} />
               <p className="text-white my-4 text-lg px-4 sm:px-8">
-                You can animate the rotation of elements using the <code className="text-lime-200">'rotate'</code> property. This example rotates the element 360 degrees over 2 seconds.
+                You can animate the rotation of elements using the{" "}
+                <code className="text-lime-200">'rotate'</code> property. This
+                example rotates the element 360 degrees over 2 seconds.
               </p>
             </div>
 
             {/* Animating Scale */}
             <div className="mb-16">
-              <h2 className="text-teal-400 text-2xl font-bold mb-2">Animating Scale</h2>
+              <h2 className="text-teal-400 text-2xl font-bold mb-2">
+                Animating Scale
+              </h2>
               <CodeSnippet code={scaleAnimationCode} />
               <p className="text-white my-4 text-lg px-4 sm:px-8">
-                You can animate the scale of elements using the <code className="text-lime-200">'scale'</code> property. This example makes the circle quickly expand.
+                You can animate the scale of elements using the{" "}
+                <code className="text-lime-200">'scale'</code> property. This
+                example makes the circle quickly expand.
               </p>
             </div>
           </div>
