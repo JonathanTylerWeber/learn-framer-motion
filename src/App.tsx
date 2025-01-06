@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { setPageText } from "./slices/pageSlice";
 import ScrollToTop from "./components/ScrollToTop";
+import Projects from "./pages/Projects";
 
 export default function App() {
   const [isPreloading, setIsPreloading] = useState(true);
@@ -36,6 +37,7 @@ export default function App() {
       "/": "Home",
       "/about": "About",
       "/learn": "Basics",
+      "/projects": "Projects",
       "/learn/basics": "Basics",
       "/learn/gestures": "Gestures",
       "/learn/variants": "Variants",
@@ -60,6 +62,7 @@ export default function App() {
               <Route path="gestures" element={<Gestures />} />
               <Route path="variants" element={<Variants />} />
             </Route>
+            <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
