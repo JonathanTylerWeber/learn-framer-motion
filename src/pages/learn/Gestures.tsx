@@ -13,7 +13,7 @@ import {
   whileFocusCode,
   whileHoverCode,
   whileTapCode,
-} from "../../codeSnippets";
+} from "../../codeSnippets/gestureSnippets";
 import CodeEditorMemo from "../../components/CodeEditMemo";
 
 const Gestures = () => {
@@ -36,7 +36,11 @@ const Gestures = () => {
         </div>
 
         <div className="fixed bottom-0 z-30 hidden md:flex w-full">
-          <CodeEditorMemo startCode={starterClick.trim()} refresh={true} />
+          <CodeEditorMemo
+            startCode={starterClick.trim()}
+            refresh={true}
+            noInline={false}
+          />
         </div>
 
         <div className="mx-auto w-full max-w-screen-xl md:mb-[50vh]">

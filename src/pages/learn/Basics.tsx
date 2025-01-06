@@ -9,7 +9,7 @@ import {
   rotationAnimationCode,
   scaleAnimationCode,
   starterCircle,
-} from "../../codeSnippets";
+} from "../../codeSnippets/basicSnippets";
 import CodeSnippet from "../../components/CodeSnippet";
 import SideNav from "../../components/SideNav";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,11 @@ const Basics = () => {
         </div>
 
         <div className="fixed bottom-0 z-30 hidden md:flex w-full">
-          <CodeEditorMemo startCode={starterCircle.trim()} refresh={true} />
+          <CodeEditorMemo
+            startCode={starterCircle.trim()}
+            refresh={true}
+            noInline={false}
+          />
         </div>
 
         <div className="mx-auto w-full max-w-screen-xl md:mb-[30vh] xl:mb-[50vh]">
@@ -144,7 +148,11 @@ const Basics = () => {
           </p>
 
           <div className="my-20 md:hidden">
-            <CodeEditorMemo startCode={starterCircle} refresh={true} />
+            <CodeEditorMemo
+              startCode={starterCircle}
+              refresh={true}
+              noInline={false}
+            />
           </div>
 
           <div className="mx-6 sm:mx-10 lg:mx-36 mt-10">
